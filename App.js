@@ -1,15 +1,40 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, View } from 'react-native'
+import { Asset, AppLoading } from 'expo'
+import Splash from './src/components/Splash'
+
 
 export default class App extends React.Component {
+  state = {
+    isReady: false
+  }
+
+  async _cacheResourcesAsync() {
+    const images = [
+      require('./src/assets/splash.png'),
+    ]
+
+    const cacheImages = images.map((image) => {
+      return Asset.fromModule(image).downloadAsync();
+    })
+    return Promise.all(cacheImages)
+  }
+
   render() {
+    if (!this.state.isReady) {
+      return (
+        <AppLoading
+          startAsync={this._cacheResourcesAsync}
+          onFinish={() => this.setState({ isReady: true })}
+          onError={console.warn}
+        />
+      )
+    }
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Splash />
       </View>
-    );
+    )
   }
 }
 
@@ -20,4 +45,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})
