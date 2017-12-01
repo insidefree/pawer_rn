@@ -1,6 +1,8 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Asset, AppLoading } from 'expo'
+import { Provider } from 'react-redux'
+import store from './src/store'
 import Splash from './src/components/Splash'
 
 
@@ -31,9 +33,11 @@ export default class App extends React.Component {
       )
     }
     return (
-      <View style={styles.container}>
-        <Splash />
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <Splash />
+        </View>
+      </Provider>
     )
   }
 }
