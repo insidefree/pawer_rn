@@ -20,18 +20,6 @@ class Splash extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: "#8d51e7",
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    text: {
-        color: "#ccc"
-    }
-})
-
 const mapStateToProps = state => {
     return {
         users: state
@@ -44,3 +32,16 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Splash)
+
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: "#8d51e7",
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    text: {
+        color: "#ccc"
+    }
+})

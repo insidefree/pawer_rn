@@ -5,8 +5,7 @@ import { Provider } from 'react-redux'
 import store from './src/store'
 import Splash from './src/components/Splash'
 
-store.subscribe(() => console.log('store has been changed'))
-store.subscribe(() => console.log(store.getState()))
+
 export default class App extends React.Component {
   state = {
     isReady: false
