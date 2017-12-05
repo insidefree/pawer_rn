@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View, Image } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,6 +13,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+  },
+  icon: {
+    marginTop: 20,
+    width: 32,
+    height: 32,
   },
 });
 
@@ -36,7 +41,13 @@ LoginScreen.propTypes = {
 };
 
 LoginScreen.navigationOptions = {
-  title: 'Log In',
+  title: '',
+  tabBarIcon: ({ tintColor }) => (
+    <Image
+      source={require('../../assets/menu.png')}
+      style={[styles.icon, {tintColor: tintColor}]}
+    />
+  ),
 };
 
 export default LoginScreen;

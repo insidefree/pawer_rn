@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,6 +13,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
   },
+  icon: {
+    marginTop: 20,
+    width: 32,
+    height: 32,
+  },
 });
 
 const ProfileScreen = () => (
@@ -24,7 +29,13 @@ const ProfileScreen = () => (
 );
 
 ProfileScreen.navigationOptions = {
-  title: 'Profile',
+  title: '',
+  tabBarIcon: ({ tintColor }) => (
+    <Image
+      source={require('../../assets/profile.png')}
+      style={[styles.icon, {tintColor: tintColor}]}
+    />
+  ),
 };
 
 export default ProfileScreen;
