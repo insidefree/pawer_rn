@@ -1,27 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { addNavigationHelpers, StackNavigator, TabNavigator } from 'react-navigation'
+import { addNavigationHelpers, TabNavigator } from 'react-navigation'
 
-import LoginScreen from './screens/LoginScreen'
-import MainScreen from './screens/MainScreen'
 import ProfileScreen from './screens/ProfileScreen'
-import NearbyPlaces from './screens/NearbyPlaces'
-import PawList from './screens/PawList'
+import NearbyPlacesScreen from './screens/NearbyPlacesScreen'
+import PawListScreen from './screens/PawListScreen'
+import SosScreen from './screens/SosScreen'
+import PawFeedScreen from './screens/PawFeedScreen'
+
 
 export const AppNavigator = TabNavigator({
-  Login: { screen: LoginScreen },
-  Main: { screen: MainScreen },
   Profile: { screen: ProfileScreen },
-  NearbyPlaces: { screen: NearbyPlaces },
-  PawList: { screen: PawList }
+  NearbyPlaces: { screen: NearbyPlacesScreen },
+  PawList: { screen: PawListScreen },
+  Sos: { screen: SosScreen },
+  PawFeed: { screen: PawFeedScreen }
 }, {
     tabBarPosition: 'bottom',
     animationEnabled: true,
     tabBarOptions: {
       activeTintColor: '#633ae9',
     },
-    order: ['NearbyPlaces', 'PawList', 'Login', 'Main', 'Profile']
+    order: ['NearbyPlaces', 'PawList', 'PawFeed', 'Sos', 'Profile']
   });
 
 const AppWithNavigationState = ({ dispatch, nav }) => (

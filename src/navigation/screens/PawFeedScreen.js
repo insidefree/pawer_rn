@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
 
 
-export default class PawList extends Component {
+export default class PawFeedScreen extends Component {
     static navigationOptions = {
         title: '',
         tabBarIcon: ({ tintColor }) => (
             <Image
-                source={require('../../assets/pawlist.png')}
+                source={require('../../assets/menu.png')}
                 style={[styles.icon, { tintColor: tintColor }]}
             />
         ),
@@ -15,7 +15,7 @@ export default class PawList extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Nearby Places</Text>
+                <Text>PawFeed first page</Text>
             </View>
         )
     }

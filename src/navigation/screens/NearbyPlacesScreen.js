@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
 
-export default class NearbyPlaces extends Component {
+export default class NearbyPlacesScreen extends Component {
     static navigationOptions = {
         title: '',
         tabBarIcon: ({ tintColor }) => (
