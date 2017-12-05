@@ -1,13 +1,14 @@
 import { createStore, applyMiddleware } from 'redux'
 import reducers from './reducers'
+import AppReducer from './reducers'
 
-const initState = {
+/* const initState = {
     users: []
-}
+} */
 // here we use midlewares !!!!
 
 
-export default createStore((state = initState, action) => {
+/* export default createStore((state = initState, action) => {
     if (action.type === 'ADD_NEW_USER') {
         state.users = state.users.concat('@new_user_' + Date.now())
         // console.log(state)
@@ -15,4 +16,6 @@ export default createStore((state = initState, action) => {
         return { ...state }
     }
     return state
-})
+}) */
+
+export default createStore(AppReducer)
