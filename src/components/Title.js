@@ -6,7 +6,7 @@ export default class Title extends Component {
         const { title } = this.props
         return (
             <View style={styles.continer}>
-                <Text>{title}</Text>
+                <Text style={styles.text}>{title}</Text>
             </View>
         )
     }
@@ -18,5 +18,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         maxWidth: 200
+    },
+    text: {
+        fontFamily: 'Baloo',
+        fontSize: 32
     }
 })

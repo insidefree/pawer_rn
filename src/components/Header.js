@@ -10,8 +10,8 @@ export default class Header extends Component {
     render() {
         return (
             <View style={styles.container}>
-            <Title title={'Pawfeed'} style={styles.title} />
-                    <Filter />
+                <Title title={'Pawfeed'} style={styles.title} />
+                <Filter />
             </View>
         )
     }
@@ -24,5 +24,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingTop: 30,
         maxHeight: 100,
+
     }
 })
