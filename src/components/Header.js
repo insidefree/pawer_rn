@@ -10,7 +10,7 @@ export default class Header extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Title title={'Pawfeed'} style={styles.title} />
+                <Title title={'Pawfeed'} />
                 <Filter />
             </View>
         )
@@ -21,9 +21,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'center',
         paddingTop: 30,
         maxHeight: 100,
-
     }
 })

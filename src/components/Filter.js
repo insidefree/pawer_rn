@@ -1,21 +1,37 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Image, TouchableOpacity, StyleSheet } from 'react-native'
 
 export default class Filter extends Component {
     render() {
         return (
-            <View style={styles.continer}>
-                <Text>Filter</Text>
+            <View style={styles.container}>
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => console.log('filter')}
+                    underlayColor='green'
+                >
+                    <Image
+                        style={styles.button}
+                        source={require('../assets/filter.png')}
+                    />
+                </TouchableOpacity>
             </View>
         )
     }
 }
 
 const styles = StyleSheet.create({
-    continer: {
+    container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'flex-start',
         maxWidth: 50
+    },
+    button: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        maxHeight: 32,
+        maxWidth: 32,
     }
 })

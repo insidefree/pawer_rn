@@ -5,7 +5,7 @@ export default class Title extends Component {
     render() {
         const { title } = this.props
         return (
-            <View style={styles.continer}>
+            <View style={styles.container}>
                 <Text style={styles.text}>{title}</Text>
             </View>
         )
@@ -13,14 +13,20 @@ export default class Title extends Component {
 }
 
 const styles = StyleSheet.create({
-    continer: {
+    container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
-        maxWidth: 200
+        alignItems: 'flex-start',
+        maxWidth: 180,
+        marginLeft: -3
     },
     text: {
+        // flex: 1,
+        // justifyContent: 'center',
+        // alignItems: 'flex-start',
         fontFamily: 'Baloo',
-        fontSize: 32
+        fontSize: 42,
+        color: '#0B0B0B',
+        paddingTop: 8,
     }
 })

@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'flex-start',
         backgroundColor: '#F5FCFF',
+        paddingLeft: 20
     },
     icon: {
         marginTop: 15,
