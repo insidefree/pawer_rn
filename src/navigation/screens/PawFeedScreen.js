@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
 
 /* components */
+import Header from '../../components/Header'
 import Title from '../../components/Title'
+import Filter from '../../components/Filter'
+
 
 export default class PawFeedScreen extends Component {
     static navigationOptions = {
@@ -17,12 +20,9 @@ export default class PawFeedScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.header}>
-                    <Title  />
-                    <Title  />
-                </View>
+                <Header title={'Pawfeed'} />
 
-                <Text>PawFeed first page</Text>
+                <Text style={styles.text}>PawFeed first page</Text>
             </View>
         )
     }
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         backgroundColor: '#F5FCFF',
     },
     icon: {
@@ -40,7 +40,10 @@ const styles = StyleSheet.create({
         width: 32,
         height: 32,
     },
-    header: {
-        height: 30
+    text: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%'
     }
-});
+})
