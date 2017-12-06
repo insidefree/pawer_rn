@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF',
     },
     icon: {
-        marginTop: 20,
+        marginTop: 15,
         width: 32,
         height: 32,
     },

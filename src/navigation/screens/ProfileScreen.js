@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   icon: {
-    marginTop: 20,
+    marginTop: 15,
     width: 32,
     height: 32,
   },

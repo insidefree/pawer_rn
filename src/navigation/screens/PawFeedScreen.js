@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
 
+/* components */
+import Title from '../../components/Title'
 
 export default class PawFeedScreen extends Component {
     static navigationOptions = {
@@ -15,6 +17,11 @@ export default class PawFeedScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <View style={styles.header}>
+                    <Title  />
+                    <Title  />
+                </View>
+
                 <Text>PawFeed first page</Text>
             </View>
         )
@@ -29,8 +36,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF',
     },
     icon: {
-        marginTop: 20,
+        marginTop: 15,
         width: 32,
         height: 32,
     },
+    header: {
+        height: 30
+    }
 });
