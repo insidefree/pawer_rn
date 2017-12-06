@@ -4,7 +4,7 @@ import { Asset, AppLoading } from 'expo'
 import { Provider } from 'react-redux'
 import store from './src/store'
 import Splash from './src/components/Splash'
-
+import AppWithNavigationState from './src/navigation/AppNavigator'
 
 export default class App extends React.Component {
   state = {
@@ -34,9 +34,7 @@ export default class App extends React.Component {
     }
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <Splash />
-        </View>
+        <AppWithNavigationState />
       </Provider>
     )
   }
