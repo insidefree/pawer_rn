@@ -21,7 +21,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
+        width: '100%',
         paddingTop: 30,
-        maxHeight: 100,
+        maxHeight: 90,
+        borderBottomWidth: 1,
+        borderColor: '#e9e9e9'
     }
 })

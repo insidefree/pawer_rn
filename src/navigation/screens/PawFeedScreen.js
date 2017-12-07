@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'flex-start',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#FFF',
         paddingLeft: 20
     },
     icon: {

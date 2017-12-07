@@ -17,16 +17,16 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'flex-start',
-        maxWidth: 180,
-        marginLeft: -3
+        maxWidth: 135,
+        marginLeft: -2
     },
     text: {
         // flex: 1,
         // justifyContent: 'center',
         // alignItems: 'flex-start',
         fontFamily: 'Baloo',
-        fontSize: 42,
+        fontSize: 32,
         color: '#0B0B0B',
-        paddingTop: 8,
+        paddingTop: 6,
     }
 })
