@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, Image, FlatList, StyleSheet } from 'react-native'
 
 /* components */
 import Header from '../../components/Header'
 import Title from '../../components/Title'
 import Filter from '../../components/Filter'
-
+import PawCard from '../../components/PawCard'
 
 export default class PawFeedScreen extends Component {
     static navigationOptions = {
@@ -21,8 +21,20 @@ export default class PawFeedScreen extends Component {
         return (
             <View style={styles.container}>
                 <Header title={'Pawfeed'} />
+                <FlatList
+                    data={[
+                        { key: 'Devin' },
+                        { key: 'Jackson' },
+                        { key: 'James' },
+                        { key: 'Joel' },
+                        { key: 'John' },
+                        { key: 'Jillian' },
+                        { key: 'Jimmy' },
+                        { key: 'Julie' },
+                    ]}
+                    renderItem={({ item }) => <PawCard name={item.key} />}
+                />
 
-                <Text style={styles.text}>PawFeed first page</Text>
             </View>
         )
     }
@@ -32,19 +44,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'flex-start',
+        alignItems: 'stretch',
         backgroundColor: '#FFF',
-        paddingLeft: 20
+        paddingLeft: 20,
+        // paddingRight: 20,
     },
     icon: {
         marginTop: 15,
         width: 32,
         height: 32,
-    },
-    text: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%'
     }
+
 })
