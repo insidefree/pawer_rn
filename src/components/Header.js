@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         width: '100%',
-        paddingTop: 30,
-        maxHeight: 90,
+        paddingTop: 15,
+        maxHeight: 75,
         borderBottomWidth: 1,
         borderColor: '#e9e9e9'
     }

@@ -40,16 +40,21 @@ const styles = StyleSheet.create({
         marginTop: 15,
         marginRight: 25,
         fontSize: 21,
-        fontFamily: 'Baloo',
+        fontFamily: 'Circe',
+        color: '#0B0B0B',
+        fontWeight: 'bold',
+        lineHeight: 25,
     },
     time: {
         marginLeft: 25,
         marginTop: 10,
         marginRight: 25,
-        // fontFamily: 'Circe',
+        fontFamily: 'Circe',
         color: '#0B0B0B',
         fontSize: 12,
         fontWeight: 'bold',
-        opacity: 0.55
+        opacity: 0.55,
+        letterSpacing: 1,
+        lineHeight: 17
     }
 })
