@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
         // fontFamily: 'Circe',
         color: '#0B0B0B',
         fontSize: 12,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        opacity: 0.55
     }
 })
