@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Image, FlatList, StyleSheet } from 'react-native'
+import { View, Text, Image, FlatList, StyleSheet, StatusBar } from 'react-native'
 
 /* components */
 import Header from '../../components/Header'
@@ -20,6 +20,7 @@ export default class PawFeedScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <StatusBar translucent={true} />
                 <Header title={'Pawfeed'} />
                 <FlatList
                     data={[
