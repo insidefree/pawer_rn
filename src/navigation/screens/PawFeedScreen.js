@@ -24,16 +24,20 @@ export default class PawFeedScreen extends Component {
                 <Header title={'Pawfeed'} />
                 <FlatList
                     data={[
-                        { key: 'Devin' },
-                        { key: 'Jackson' },
-                        { key: 'James' },
-                        { key: 'Joel' },
-                        { key: 'John' },
-                        { key: 'Jillian' },
-                        { key: 'Jimmy' },
-                        { key: 'Julie' },
+                        { key: 'Devin', at: true, care: false },
+                        { key: 'Jackson', at: false, care: true },
+                        { key: 'James', at: false, care: false },
+                        { key: 'Joel', at: false, care: true },
+                        { key: 'John', at: true, care: false },
+                        { key: 'Jillian', at: true, care: false },
+                        { key: 'Jimmy', at: true, care: false },
+                        { key: 'Julie', at: false, care: false },
                     ]}
-                    renderItem={({ item }) => <PawCard name={item.key} />}
+                    renderItem={({ item }) => <PawCard
+                        name={item.key}
+                        attention={item.at}
+                        care={item.care}
+                    />}
                 />
 
             </View>

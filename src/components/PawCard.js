@@ -3,11 +3,11 @@ import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
 
 /* components */
 import Attention from './Attention'
-
+import PawCare from './PawCare'
 
 export default class PawCard extends Component {
     render() {
-        const { name, attention } = this.props
+        const { name, attention, care } = this.props
         return (
             <View style={styles.container}>
                 <View style={styles.imgWrap}>
@@ -15,10 +15,13 @@ export default class PawCard extends Component {
                         style={styles.img}
                         source={require('../assets/img/dog.jpeg')}
                     />
-                    {!attention ? <Attention /> : null}
+                    {attention ? <Attention /> : null}
+                    {care ? <PawCare /> : null}
                 </View>
 
-                <Text style={styles.desc}>Mongrel puppy Jimmy  lost on the beach  of pensioners</Text>
+                <Text style={styles.desc}>
+                    <Text style={styles.name}>{name}</Text> puppy Jimmy  lost on the beach  of pensioners
+                </Text>
                 <Text style={styles.time}>2 HOURS AGO</Text>
             </View>
         )
@@ -50,6 +53,7 @@ const styles = StyleSheet.create({
         marginLeft: 25,
         marginTop: 15,
         marginRight: 25,
+        paddingTop: 2,
         fontSize: 21,
         fontFamily: 'Circe',
         color: '#0B0B0B',
@@ -67,5 +71,10 @@ const styles = StyleSheet.create({
         opacity: 0.55,
         letterSpacing: 1,
         lineHeight: 17
+    },
+    name: {
+        fontSize: 21,
+        color: '#633ae9',
+        fontFamily: 'CirceBold'
     }
 })

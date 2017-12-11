@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     icon: {
         height: 40,
         width: 40,
-        margin: 10,
+        margin: 13,
         position: 'absolute',
         direction: 'ltr',
         right: 0
