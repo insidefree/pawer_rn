@@ -4,6 +4,7 @@ import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
 /* components */
 import Attention from './Attention'
 import PawCare from './PawCare'
+import PawStatus from './PawStatus'
 
 export default class PawCard extends Component {
     render() {
@@ -15,8 +16,11 @@ export default class PawCard extends Component {
                         style={styles.img}
                         source={require('../assets/img/dog.jpeg')}
                     />
-                    {attention ? <Attention /> : null}
-                    {care ? <PawCare /> : null}
+                    <PawStatus 
+                        care={care}
+                        attention={attention}
+                    />
+                    
                 </View>
 
                 <Text style={styles.desc}>
