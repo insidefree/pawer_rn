@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
 
 /* components */
-import Attention from './Attention'
-import PawCare from './PawCare'
 import PawStatus from './PawStatus'
 
 export default class PawCard extends Component {
