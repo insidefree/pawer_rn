@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         width: '100%',
-        paddingTop: Platform.OS === 'ios' ? 13 : StatusBar.currentHeight,
-        maxHeight: 63,
+        paddingTop: Platform.OS === 'ios' ? 15 : StatusBar.currentHeight,
+        maxHeight: 65,
         borderBottomWidth: 1,
         borderColor: '#e9e9e9'
     }

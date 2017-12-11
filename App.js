@@ -19,6 +19,7 @@ export default class App extends React.Component {
     await Font.loadAsync({
       'Baloo': require('./src/assets/fonts/Baloo-Regular.ttf'),
       'Circe': require('./src/assets/fonts/Circe-Regular.ttf'),
+      'CirceBold': require('./src/assets/fonts/Circe-Bold.ttf'),
     })
     this.setState({ fontLoaded: true })
   }

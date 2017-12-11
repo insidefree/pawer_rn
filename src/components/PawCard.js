@@ -49,10 +49,10 @@ const styles = StyleSheet.create({
         marginLeft: 25,
         marginTop: 10,
         marginRight: 25,
-        fontFamily: 'Circe',
+        fontFamily: 'CirceBold',
         color: '#0B0B0B',
         fontSize: 12,
-        fontWeight: 'bold',
+        // fontWeight: 'bold',
         opacity: 0.55,
         letterSpacing: 1,
         lineHeight: 17
