@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { View, Text, Image, FlatList, StyleSheet, StatusBar } from 'react-native'
 
+
+/* containers */
+import PawDeedContainer from '../../containers/PawDeedContainer'
 /* components */
 import Header from '../../components/Header'
 import Title from '../../components/Title'
@@ -22,6 +25,7 @@ export default class PawFeedScreen extends Component {
             <View style={styles.container}>
                 <StatusBar translucent={true} />
                 <Header title={'Pawfeed'} />
+                <PawDeedContainer />
                 <FlatList
                     data={[
                         { key: 'Devin', at: true, care: false },
