@@ -10,8 +10,8 @@ export default class PawDeed extends Component {
                     style={styles.img}
                     source={require('../assets/avatar.jpeg')}
                 />
-                <View style={styles.text}>
-                    <Text><Text style={styles.name}>Joseph</Text> gave <Text style={styles.name}>Ricardo</Text> 15 bones</Text>
+                <View style={styles.textContainer}>
+                    <Text style={styles.text}><Text style={styles.name}>Joseph</Text> gave <Text style={styles.name}>Ricardo</Text> 15 bones</Text>
                     <Text style={styles.time}>2 HOURS AGO</Text>
                 </View>
 
@@ -29,14 +29,16 @@ const styles = StyleSheet.create({
         marginRight: 20,
         marginBottom: 10
     },
-    text: {
+    textContainer: {
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'space-between',
         height: 40,
-        fontSize: 17,
-        fontFamily: 'Circe',
         marginLeft: 16
+    },
+    text: {
+        fontFamily: 'Circe',
+        fontSize: 17
     },
     img: {
         height: 48,
