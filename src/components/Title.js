@@ -27,6 +27,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Baloo',
         fontSize: 32,
         color: '#0B0B0B',
-        paddingTop: 6,
+        // paddingTop: 6,
     }
 })

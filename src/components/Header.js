@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Platform, StatusBar } from 'react-native'
 
 /* components */
 import Title from './Title'
@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         width: '100%',
-        paddingTop: 10,
-        maxHeight: 70,
+        paddingTop: Platform.OS === 'ios' ? 13 : StatusBar.currentHeight,
+        maxHeight: 63,
         borderBottomWidth: 1,
         borderColor: '#e9e9e9'
     }

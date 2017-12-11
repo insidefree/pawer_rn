@@ -6,7 +6,7 @@ export default class NearbyPlacesScreen extends Component {
         title: '',
         tabBarIcon: ({ tintColor }) => (
             <Image
-                source={require('../../assets/nearbyPlaces.png')}
+                source={require('../../assets/img/icons/navPlaces/icNavPlaces0_3x.png')}
                 style={[styles.icon, { tintColor: tintColor }]}
             />
         ),

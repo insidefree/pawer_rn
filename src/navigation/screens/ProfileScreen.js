@@ -32,7 +32,7 @@ ProfileScreen.navigationOptions = {
   title: '',
   tabBarIcon: ({ tintColor }) => (
     <Image
-      source={require('../../assets/profile.png')}
+      source={require('../../assets/img/icons/profile/icProfile0_3x.png')}
       style={[styles.icon, {tintColor: tintColor}]}
     />
   ),

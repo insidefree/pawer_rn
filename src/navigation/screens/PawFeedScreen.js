@@ -12,7 +12,7 @@ export default class PawFeedScreen extends Component {
         title: '',
         tabBarIcon: ({ tintColor }) => (
             <Image
-                source={require('../../assets/menu.png')}
+                source={require('../../assets/img/icons/navFeed/icNavFeed1_3x.png')}
                 style={[styles.icon, { tintColor: tintColor }]}
             />
         ),

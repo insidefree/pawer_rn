@@ -12,7 +12,7 @@ export default class Filter extends Component {
                 >
                     <Image
                         style={styles.button}
-                        source={require('../assets/filter.png')}
+                        source={require('../assets/img/icons/filter/icFilter_3x.png')}
                     />
                 </TouchableOpacity>
             </View>

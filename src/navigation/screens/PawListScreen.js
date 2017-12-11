@@ -7,7 +7,7 @@ export default class PawListScreen extends Component {
         title: '',
         tabBarIcon: ({ tintColor }) => (
             <Image
-                source={require('../../assets/pawlist.png')}
+                source={require('../../assets/img/icons/navList/icNavList0_3x.png')}
                 style={[styles.icon, { tintColor: tintColor }]}
             />
         ),
@@ -15,7 +15,7 @@ export default class PawListScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Nearby Places</Text>
+                <Text>List of animals</Text>
             </View>
         )
     }
