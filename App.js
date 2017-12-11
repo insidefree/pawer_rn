@@ -25,7 +25,7 @@ export default class App extends React.Component {
 
   async _cacheResourcesAsync() {
     const images = [
-      require('./src/assets/splash.png'),
+      // require('./src/assets/splash.png'),
     ]
 
     const cacheImages = images.map((image) => {
