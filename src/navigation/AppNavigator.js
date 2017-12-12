@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { addNavigationHelpers, TabNavigator } from 'react-navigation'
+import { addNavigationHelpers, TabNavigator, StackNavigator } from 'react-navigation'
 
 import ProfileScreen from './screens/ProfileScreen'
 import NearbyPlacesScreen from './screens/NearbyPlacesScreen'
 import PawListScreen from './screens/PawListScreen'
 import SosScreen from './screens/SosScreen'
 import PawFeedScreen from './screens/PawFeedScreen'
+import PawListCardEntryScreen from './screens/PawListCardEntryScreen'
 
 
 export const AppNavigator = TabNavigator({
@@ -23,7 +24,26 @@ export const AppNavigator = TabNavigator({
       activeTintColor: '#633ae9',
     },
     order: ['NearbyPlaces', 'PawList', 'PawFeed', 'Sos', 'Profile']
-  });
+  })
+
+export const PawTabNavigator = StackNavigator({
+  Root: {
+    screen: AppNavigator,
+  },
+  NotifSettings: {
+    screen: PawListCardEntryScreen,
+    navigationOptions: {
+      title: 'PawListCardEntryScreen',
+    },
+  },
+  /*   Profile: {
+      screen: MyProfileScreen,
+      path: '/people/:name',
+      navigationOptions: ({ navigation }) => {
+        title: `${navigation.state.params.name}'s Profile!`
+      },
+    }, */
+})
 
 const AppWithNavigationState = ({ dispatch, nav }) => (
   <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />

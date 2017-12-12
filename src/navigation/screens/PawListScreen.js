@@ -16,6 +16,8 @@ export default class PawListScreen extends Component {
         ),
     }
     render() {
+        console.log("******list", this.props.navigation)
+        const { navigation } = this.props
         return (
             <View style={styles.container}>
                 <Header title={'Pawslist'} />
@@ -33,6 +35,7 @@ export default class PawListScreen extends Component {
                     renderItem={({ item }) => <PawListCard
                         name={item.key}
                         age={item.age}
+                        navigation={navigation}
                     />}
                 />
             </View>

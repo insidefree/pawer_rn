@@ -8,7 +8,6 @@ export default class Filter extends Component {
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => console.log('filter')}
-                    underlayColor='green'
                 >
                     <Image
                         style={styles.button}

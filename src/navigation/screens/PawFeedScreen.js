@@ -21,6 +21,7 @@ export default class PawFeedScreen extends Component {
         ),
     }
     render() {
+        console.log("******feed", this.props.navigation)
         return (
             <View style={styles.container}>
                 <StatusBar translucent={true} />

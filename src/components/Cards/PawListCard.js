@@ -4,10 +4,12 @@ import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
 
 export default class PawListCard extends Component {
     render() {
-        const { name, age } = this.props
+        console.log("******card", this.props)
+        const { name, age, navigation } = this.props
         return (
-            <View style={styles.container}>
-
+            <TouchableOpacity style={styles.container}
+                onPress={() => navigation.navigate('PawListCardEntryScreen')}
+            >
                 <Image
                     style={styles.img}
                     source={require('../../assets/img/dog.jpeg')}
@@ -19,7 +21,7 @@ export default class PawListCard extends Component {
                     <Text style={styles.ageNumber}>>{age}</Text>
                     <Text style={styles.yearText}>years</Text>
                 </View>
-            </View>
+            </TouchableOpacity>
         )
     }
 }
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
         top: 155,
         right: 24,
     },
-    ageNumber: {  
+    ageNumber: {
         fontSize: 24,
         fontFamily: 'CirceBold',
         color: '#fff',
