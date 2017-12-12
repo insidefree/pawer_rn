@@ -6,7 +6,7 @@ export default class SosScreen extends Component {
         title: '',
         tabBarIcon: ({ tintColor }) => (
             <Image
-                source={require('../../assets/help.png')}
+                source={require('../../assets/img/icons/sos/icSos0_3x.png')}
                 style={[styles.icon, { tintColor: tintColor }]}
             />
         ),

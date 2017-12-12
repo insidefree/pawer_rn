@@ -2,18 +2,31 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Asset, AppLoading } from 'expo'
 import { Provider } from 'react-redux'
+import { Font } from 'expo';
+
+/* components */
 import store from './src/store'
 import Splash from './src/components/Splash'
 import AppWithNavigationState from './src/navigation/AppNavigator'
 
 export default class App extends React.Component {
   state = {
-    isReady: false
+    isReady: false,
+    fontLoaded: false
+  }
+
+  async componentDidMount() {
+    await Font.loadAsync({
+      'Baloo': require('./src/assets/fonts/Baloo-Regular.ttf'),
+      'Circe': require('./src/assets/fonts/Circe-Regular.ttf'),
+      'CirceBold': require('./src/assets/fonts/Circe-Bold.ttf'),
+    })
+    this.setState({ fontLoaded: true })
   }
 
   async _cacheResourcesAsync() {
     const images = [
-      require('./src/assets/splash.png'),
+      // require('./src/assets/splash.png'),
     ]
 
     const cacheImages = images.map((image) => {
@@ -23,7 +36,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    if (!this.state.isReady) {
+    if (!this.state.isReady && !this.state.fontLoaded) {
       return (
         <AppLoading
           startAsync={this._cacheResourcesAsync}
@@ -32,11 +45,14 @@ export default class App extends React.Component {
         />
       )
     }
-    return (
-      <Provider store={store}>
-        <AppWithNavigationState />
-      </Provider>
-    )
+    
+      return (
+        <Provider store={store}>
+          {this.state.fontLoaded ? <AppWithNavigationState /> : <View />}
+        </Provider>
+      )
+    
+
   }
 }
 

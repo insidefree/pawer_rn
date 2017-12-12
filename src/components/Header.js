@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Platform, StatusBar } from 'react-native'
 
 /* components */
 import Title from './Title'
@@ -10,8 +10,8 @@ export default class Header extends Component {
     render() {
         return (
             <View style={styles.container}>
-            <Title title={'Pawfeed'} style={styles.title} />
-                    <Filter />
+                <Title title={'Pawfeed'} />
+                <Filter />
             </View>
         )
     }
@@ -21,8 +21,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'center',
-        paddingTop: 30,
-        maxHeight: 100,
+        width: '100%',
+        paddingTop: Platform.OS === 'ios' ? 15 : StatusBar.currentHeight,
+        maxHeight: 65,
+        borderBottomWidth: 1,
+        borderColor: '#e9e9e9'
     }
 })
