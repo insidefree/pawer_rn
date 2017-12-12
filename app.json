@@ -1,15 +1,16 @@
 {
     "expo": {
         "name": "pawer",
-        "icon": "./src/assets/splash.png",
-        "version": "1.0.2",
+        "icon": "./src/assets/icon@3x.png",
+        "version": "1.0.3",
         "slug": "pawer",
         "sdkVersion": "23.0.0",
         "ios": {
-            "bundleIdentifier": "org.axolotl.pawer"
+            "bundleIdentifier": "org.axolotl.pawer",
+            "icon": "./src/assets/icon@3x.png"
         },
         "splash": {
-            "image": "./src/assets/img/splash/pawer_3x.png",
+            "image": "./src/assets/img/splash/complex@3x.png",
             "backgroundColor": "#633ae9"
             // "resizeMode": "contain"
         }
