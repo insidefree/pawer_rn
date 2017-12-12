@@ -3,7 +3,7 @@ import { View, Text, Image, FlatList, StyleSheet } from 'react-native'
 
 /* components */
 import Header from '../../components/Header'
-import PawCard from '../../components/PawCard'
+import PawListCard from '../../components/Cards/PawListCard'
 
 export default class PawListScreen extends Component {
     static navigationOptions = {
@@ -30,10 +30,8 @@ export default class PawListScreen extends Component {
                         { key: 'Jimmy', at: true, care: false },
                         { key: 'Julie', at: false, care: false },
                     ]}
-                    renderItem={({ item }) => <PawCard
+                    renderItem={({ item }) => <PawListCard
                         name={item.key}
-                        attention={item.at}
-                        care={item.care}
                     />}
                 />
             </View>

@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
 
 /* components */
-import PawStatus from './PawStatus'
+import PawStatus from '../PawStatus'
 
-export default class PawCard extends Component {
+export default class PawFeedCard extends Component {
     render() {
         const { name, attention, care } = this.props
         return (
@@ -12,7 +12,7 @@ export default class PawCard extends Component {
                 <View style={styles.imgWrap}>
                     <Image
                         style={styles.img}
-                        source={require('../assets/img/dog.jpeg')}
+                        source={require('../../assets/img/dog.jpeg')}
                     />
                     <PawStatus 
                         care={care}
