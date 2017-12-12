@@ -4,7 +4,7 @@ import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
 
 export default class PawListCard extends Component {
     render() {
-        const { name, year } = this.props
+        const { name, age } = this.props
         return (
             <View style={styles.container}>
 
@@ -15,12 +15,10 @@ export default class PawListCard extends Component {
                 <Text style={styles.name}>
                     {name}
                 </Text>
-                <View style={styles.year}>
-                    <Text style={styles.yearNumber}>~2</Text>
+                <View style={styles.age}>
+                    <Text style={styles.ageNumber}>>{age}</Text>
                     <Text style={styles.yearText}>years</Text>
                 </View>
-
-
             </View>
         )
     }
@@ -48,33 +46,30 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         position: 'absolute',
-        top: 158,
+        top: 157,
         left: 24,
         fontSize: 32,
         fontFamily: 'CirceBold',
         color: '#fff',
         backgroundColor: 'rgba(0,0,0,0)'
     },
-    year: {
+    age: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         direction: 'ltr',
         position: 'absolute',
-        top: 157,
+        top: 155,
         right: 24,
-        width: 40
     },
-    yearNumber: {
+    ageNumber: {  
         fontSize: 24,
         fontFamily: 'CirceBold',
-        lineHeight: -10,
         color: '#fff',
         backgroundColor: 'rgba(0,0,0,0)',
+        marginBottom: -7
     },
     yearText: {
-        position: 'absolute',
-        top: 25,
         fontSize: 14,
         fontFamily: 'Circe',
         color: '#fff',

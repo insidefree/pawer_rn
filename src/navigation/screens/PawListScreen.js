@@ -18,20 +18,21 @@ export default class PawListScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Header title={'Pawslist'}/>
+                <Header title={'Pawslist'} />
                 <FlatList
                     data={[
-                        { key: 'Devin', at: true, care: false },
-                        { key: 'Jackson', at: false, care: true },
-                        { key: 'James', at: false, care: false },
-                        { key: 'Joel', at: false, care: true },
-                        { key: 'John', at: true, care: false },
-                        { key: 'Jillian', at: true, care: false },
-                        { key: 'Jimmy', at: true, care: false },
-                        { key: 'Julie', at: false, care: false },
+                        { key: 'Devin', at: true, care: false, age: 2 },
+                        { key: 'Jackson', at: false, care: true, age: 3 },
+                        { key: 'James', at: false, care: false, age: 1 },
+                        { key: 'Joel', at: false, care: true, age: 0.6 },
+                        { key: 'John', at: true, care: false, age: 1 },
+                        { key: 'Jillian', at: true, care: false, age: 3 },
+                        { key: 'Jimmy', at: true, care: false, age: 1 },
+                        { key: 'Julie', at: false, care: false, age: 2 },
                     ]}
                     renderItem={({ item }) => <PawListCard
                         name={item.key}
+                        age={item.age}
                     />}
                 />
             </View>
