@@ -36,12 +36,15 @@ export const AppNavigator = StackNavigator({
   },
   PawListCardEntryScreen: {
     screen: PawListCardEntryScreen,
-    navigationOptions: {
-      header: StackNavigator.Header,
-      title: 'PawListCardEntryScreen',
+   navigationOptions: {
+      // header: StackNavigator.Header,
+      // title: null,
       headerStyle: {
-        backgroundColor: 'red'
-      }
+        // backgroundColor: 'transparent',
+        // height: 50,
+        // borderBottomWidth: 0
+      },
+      // headerTintColor: '#fff'
     },
   },
   /*   Profile: {
@@ -55,7 +58,7 @@ export const AppNavigator = StackNavigator({
     navigationOptions: {
       header: null
     },
-
+    // animationEnabled: false,
   })
 
 const AppWithNavigationState = ({ dispatch, nav }) => (

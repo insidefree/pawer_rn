@@ -1,21 +1,28 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { View, Text, Image, StyleSheet } from 'react-native'
+/* components */
+import PawListCardEntry from '../../components/Cards/PawListCardEntry'
 
-export default class PawListCardEntryScreen extends Component {
-    static navigationOptions = {
-        title: '',
-        tabBarIcon: ({ tintColor }) => (
-            <Image
-                source={require('../../assets/img/icons/sos/icSos0_3x.png')}
-                style={[styles.icon, { tintColor: tintColor }]}
-            />
-        ),
-    }
+
+class PawListCardEntryScreen extends Component {
+    // static navigationOptions = {
+    //     // header: StackNavigator.Header,
+    //     // title: null,
+    //     headerStyle: {
+    //         backgroundColor: 'transparent',
+    //         height: 50,
+    //         borderBottomWidth: 0
+    //     },
+    // }
 
     render() {
+        console.log('PawListCardEntryScreen',this.props)
+        const { nav } = this.props
+        const { navigation } = this.props
         return (
             <View style={styles.container}>
-                <Text>PawListCardEntryScreen</Text>
+                <PawListCardEntry navigation={navigation} />
             </View>
         )
     }
@@ -23,14 +30,19 @@ export default class PawListCardEntryScreen extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    icon: {
-        marginTop: 15,
-        width: 32,
-        height: 32,
-    },
+        // flex: 1,
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        // backgroundColor: 'red',
+        // height: 300,
+        // width: '100%',
+        // position: 'absolute',
+        // marginTop: -69
+    }
 });
+
+const mapStateToProps = state => ({
+    nav: state.nav,
+})
+
+export default connect(mapStateToProps)(PawListCardEntryScreen);
