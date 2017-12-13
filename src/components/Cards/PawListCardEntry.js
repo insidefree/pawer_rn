@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet } from 'react-native'
 
 
+/* components */
+import PawDeed from '../../components/PawDeed'
+
 export default class PawListCard extends Component {
     render() {
         console.log('PawListCardt', this.props)
@@ -44,20 +47,23 @@ export default class PawListCard extends Component {
                     <Text style={styles.textDescription}>A cat was found on a palm tree in a garden in the city center. Affectionate, loves sour cream and folk music.</Text>
                 </View>
                 <View style={styles.media}>
-                    <View style={{ width: '100%' }}>
-                        <Image
-                            source={require('../../assets/img/icons/media/image_3x.png')}
-                            style={styles.mediaIcon} />
-                        <Text style={styles.mediaText}>24 PHOTOS</Text>
-                    </View>
-                    <View style={{ width: '100%' }}>
-                        <Image
-                            source={require('../../assets/img/icons/media/play_3x.png')}
-                            style={styles.mediaIcon} />
-                        <Text style={styles.mediaText}>3 VIDEOS</Text>
-                    </View>
+                    <Image
+                        source={require('../../assets/img/icons/media/image_3x.png')}
+                        style={styles.mediaIcon} />
+                    <Text style={styles.mediaText}>24 PHOTOS</Text>
+                    <Image
+                        source={require('../../assets/img/icons/media/play_3x.png')}
+                        style={styles.mediaIcon} />
+                    <Text style={styles.mediaText}>3 VIDEOS</Text>
                 </View>
-                <View style={styles.activities}><Text>Activities</Text></View>
+                <View style={styles.activities}>
+                    <Text style={styles.activitiesText}>Last Help Activity</Text>
+                    <PawDeed />
+                    <PawDeed />
+                    <PawDeed />
+                    <PawDeed />
+                    <PawDeed />
+                </View>
             </ScrollView>
         )
     }
@@ -144,10 +150,13 @@ const styles = StyleSheet.create({
     media: {
         flex: 1,
         flexDirection: 'row',
-        // justifyContent: 'flex-start',
+        justifyContent: 'flex-start',
         alignItems: 'center',
         marginLeft: 28,
+        marginTop: -10,
         height: 55,
+        borderBottomWidth: 1,
+        borderColor: '#e9e9e9'
     },
     mediaIcon: {
         height: 28,
@@ -157,9 +166,20 @@ const styles = StyleSheet.create({
         fontFamily: 'CirceBold',
         fontSize: 12,
         color: '#a9a9a9',
-        letterSpacing: 2
+        letterSpacing: 2,
     },
     activities: {
-
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        marginLeft: 28,
+        borderBottomWidth: 1,
+        borderColor: '#e9e9e9'
+    },
+    activitiesText: {
+        fontFamily: 'CirceBold',
+        fontSize: 21,
+        marginTop: 10,
+        marginBottom: 10,
     }
 })
