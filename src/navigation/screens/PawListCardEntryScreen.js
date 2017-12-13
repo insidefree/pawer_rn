@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
         // width: '100%',
         // position: 'absolute',
         // marginTop: -69
+        backgroundColor: '#fff'
     }
 });
 

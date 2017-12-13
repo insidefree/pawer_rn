@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet } from 'react-native'
 
 
 export default class PawListCard extends Component {
@@ -7,7 +7,7 @@ export default class PawListCard extends Component {
         console.log('PawListCardt', this.props)
         const { name, age } = this.props
         return (
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
                 <Image
                     style={styles.img}
                     source={require('../../assets/img/dog.jpeg')}
@@ -34,16 +34,40 @@ export default class PawListCard extends Component {
                         style={styles.imgFavorite}
                     />
                 </TouchableOpacity>
-                <Text>PawListCardEntryScreen qweqw</Text>
-            </View>
+                <View style={styles.location}>
+                    <Image
+                        source={require('../../assets/img/icons/location/location_3x.png')}
+                        style={styles.iconLocation} />
+                    <Text style={styles.textLocation}>Animal Junction Shelter, Haifa</Text>
+                </View>
+                <View style={styles.description}>
+                    <Text style={styles.textDescription}>A cat was found on a palm tree in a garden in the city center. Affectionate, loves sour cream and folk music.</Text>
+                </View>
+                <View style={styles.media}>
+                    <View style={{ width: '100%' }}>
+                        <Image
+                            source={require('../../assets/img/icons/media/image_3x.png')}
+                            style={styles.mediaIcon} />
+                        <Text style={styles.mediaText}>24 PHOTOS</Text>
+                    </View>
+                    <View style={{ width: '100%' }}>
+                        <Image
+                            source={require('../../assets/img/icons/media/play_3x.png')}
+                            style={styles.mediaIcon} />
+                        <Text style={styles.mediaText}>3 VIDEOS</Text>
+                    </View>
+                </View>
+                <View style={styles.activities}><Text>Activities</Text></View>
+            </ScrollView>
         )
     }
 }
 
 const styles = StyleSheet.create({
     container: {
-        height: 300,
+        // height: 300,
         width: '100%',
+        // backgroundColor: '#fff'
     },
     img: {
         height: 300,
@@ -79,5 +103,63 @@ const styles = StyleSheet.create({
     imgFavorite: {
         height: 32,
         width: 32,
+    },
+    location: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        height: 55,
+        marginLeft: 28,
+        borderBottomWidth: 1,
+        borderColor: '#e9e9e9'
+    },
+    iconLocation: {
+        height: 24,
+        width: 24
+    },
+    textLocation: {
+        marginTop: 13,
+        marginLeft: 13,
+        fontFamily: 'Circe',
+        fontSize: 17,
+        color: '#633ae9',
+    },
+    description: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        marginLeft: 28,
+        marginTop: 10,
+        marginBottom: 10,
+        marginRight: 10,
+        borderBottomWidth: 1,
+        borderColor: '#e9e9e9'
+    },
+    textDescription: {
+        fontFamily: 'Circe',
+        fontSize: 17,
+    },
+    media: {
+        flex: 1,
+        flexDirection: 'row',
+        // justifyContent: 'flex-start',
+        alignItems: 'center',
+        marginLeft: 28,
+        height: 55,
+    },
+    mediaIcon: {
+        height: 28,
+        width: 28
+    },
+    mediaText: {
+        fontFamily: 'CirceBold',
+        fontSize: 12,
+        color: '#a9a9a9',
+        letterSpacing: 2
+    },
+    activities: {
+
     }
 })
