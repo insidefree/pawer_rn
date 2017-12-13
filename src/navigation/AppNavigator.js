@@ -10,6 +10,8 @@ import SosScreen from './screens/SosScreen'
 import PawFeedScreen from './screens/PawFeedScreen'
 import PawListCardEntryScreen from './screens/PawListCardEntryScreen'
 
+import Header from '../components/Header'
+
 
 export const TabAppNavigator = TabNavigator({
   Profile: { screen: ProfileScreen },
@@ -32,10 +34,14 @@ export const AppNavigator = StackNavigator({
   Root: {
     screen: TabAppNavigator,
   },
-  NotifSettings: {
+  PawListCardEntryScreen: {
     screen: PawListCardEntryScreen,
     navigationOptions: {
+      header: StackNavigator.Header,
       title: 'PawListCardEntryScreen',
+      headerStyle: {
+        backgroundColor: 'red'
+      }
     },
   },
   /*   Profile: {
@@ -45,7 +51,12 @@ export const AppNavigator = StackNavigator({
         title: `${navigation.state.params.name}'s Profile!`
       },
     }, */
-})
+}, {
+    navigationOptions: {
+      header: null
+    },
+
+  })
 
 const AppWithNavigationState = ({ dispatch, nav }) => (
   <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
