@@ -8,7 +8,7 @@ import PawDeedContainer from '../../containers/PawDeedContainer'
 import Header from '../../components/Header'
 import Title from '../../components/Title'
 import Filter from '../../components/Filter'
-import PawCard from '../../components/PawCard'
+import PawFeedCard from '../../components/Cards/PawFeedCard'
 
 export default class PawFeedScreen extends Component {
     static navigationOptions = {
@@ -21,6 +21,7 @@ export default class PawFeedScreen extends Component {
         ),
     }
     render() {
+        console.log("******feed", this.props.navigation)
         return (
             <View style={styles.container}>
                 <StatusBar translucent={true} />
@@ -37,7 +38,7 @@ export default class PawFeedScreen extends Component {
                         { key: 'Jimmy', at: true, care: false },
                         { key: 'Julie', at: false, care: false },
                     ]}
-                    renderItem={({ item }) => <PawCard
+                    renderItem={({ item }) => <PawFeedCard
                         name={item.key}
                         attention={item.at}
                         care={item.care}

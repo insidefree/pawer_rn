@@ -8,9 +8,10 @@ import Filter from './Filter'
 export default class Header extends Component {
 
     render() {
+        const { title } = this.props
         return (
             <View style={styles.container}>
-                <Title title={'Pawfeed'} />
+                <Title title={title} />
                 <Filter />
             </View>
         )

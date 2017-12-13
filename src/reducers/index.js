@@ -3,9 +3,16 @@ import { NavigationActions } from 'react-navigation'
 
 import { AppNavigator } from '../navigation/AppNavigator'
 
-const paw = AppNavigator.router.getActionForPathAndParams('PawFeed')
+
 const initialNavState = AppNavigator.router.getStateForAction(
-  paw
+  NavigationActions.reset({
+    index: 0,
+    actions: [
+      NavigationActions.navigate({
+        routeName: 'Root',
+      }),
+    ],
+  })
 )
 
 function nav(state = initialNavState, action) {
@@ -49,5 +56,3 @@ export default combineReducers({
   nav,
   auth,
 });
-
-// export default AppReducer;
