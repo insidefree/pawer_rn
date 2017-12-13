@@ -11,7 +11,7 @@ import PawFeedScreen from './screens/PawFeedScreen'
 import PawListCardEntryScreen from './screens/PawListCardEntryScreen'
 
 
-export const AppNavigator = TabNavigator({
+export const TabAppNavigator = TabNavigator({
   Profile: { screen: ProfileScreen },
   NearbyPlaces: { screen: NearbyPlacesScreen },
   PawList: { screen: PawListScreen },
@@ -19,6 +19,7 @@ export const AppNavigator = TabNavigator({
   PawFeed: { screen: PawFeedScreen }
 }, {
     tabBarPosition: 'bottom',
+    initialRouteName: 'PawFeed',
     animationEnabled: true,
     tabBarOptions: {
       activeTintColor: '#633ae9',
@@ -26,9 +27,10 @@ export const AppNavigator = TabNavigator({
     order: ['NearbyPlaces', 'PawList', 'PawFeed', 'Sos', 'Profile']
   })
 
-export const PawTabNavigator = StackNavigator({
+
+export const AppNavigator = StackNavigator({
   Root: {
-    screen: AppNavigator,
+    screen: TabAppNavigator,
   },
   NotifSettings: {
     screen: PawListCardEntryScreen,
