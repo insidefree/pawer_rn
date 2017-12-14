@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, Image, TouchableWithoutFeedback, StyleSheet } from 'react-native'
 
 
 export default class PawListCard extends Component {
@@ -7,21 +7,23 @@ export default class PawListCard extends Component {
         console.log("******card", this.props)
         const { name, age, navigation } = this.props
         return (
-            <TouchableOpacity style={styles.container}
+            <TouchableWithoutFeedback
                 onPress={() => navigation.navigate('PawListCardEntryScreen')}
             >
-                <Image
-                    style={styles.img}
-                    source={require('../../assets/img/dog.jpeg')}
-                />
-                <Text style={styles.name}>
-                    {name}
-                </Text>
-                <View style={styles.age}>
-                    <Text style={styles.ageNumber}>>{age}</Text>
-                    <Text style={styles.yearText}>years</Text>
+                <View style={styles.container}>
+                    <Image
+                        style={styles.img}
+                        source={require('../../assets/img/dog.jpeg')}
+                    />
+                    <Text style={styles.name}>
+                        {name}
+                    </Text>
+                    <View style={styles.age}>
+                        <Text style={styles.ageNumber}>> {age}</Text>
+                        <Text style={styles.yearText}>months</Text>
+                    </View>
                 </View>
-            </TouchableOpacity>
+            </TouchableWithoutFeedback>
         )
     }
 }
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
         fontFamily: 'CirceBold',
         color: '#fff',
         backgroundColor: 'rgba(0,0,0,0)',
-        marginBottom: -7
+        marginBottom: -7,
     },
     yearText: {
         fontSize: 14,
