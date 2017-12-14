@@ -19,6 +19,6 @@ import AppReducer from './reducers'
     return state
 }) */
 
-export default createStore(AppReducer)
+// export default createStore(AppReducer)
 
-// export default compose(applyMiddleware(thunk))(createStore)(AppReducer)
+export default compose(applyMiddleware(thunk))(createStore)(AppReducer)

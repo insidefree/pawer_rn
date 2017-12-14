@@ -23,28 +23,20 @@ export class PawListScreen extends Component {
         ),
     }
     componentDidMount() {
-        console.log('myanimals', this.props.fetchAnimals())
+        this.props.fetchAnimals()
     }
     render() {
         console.log("PawListScreen*props", this.props)
-        const { navigation } = this.props
+        const { navigation, animals: { animalsList } } = this.props
         return (
             <View style={styles.container}>
                 <Header title={'Pawslist'} />
                 <FlatList
-                    data={[
-                        { key: 'Devin', at: true, care: false, age: 2 },
-                        { key: 'Jackson', at: false, care: true, age: 3 },
-                        { key: 'James', at: false, care: false, age: 1 },
-                        { key: 'Joel', at: false, care: true, age: 0.6 },
-                        { key: 'John', at: true, care: false, age: 1 },
-                        { key: 'Jillian', at: true, care: false, age: 3 },
-                        { key: 'Jimmy', at: true, care: false, age: 1 },
-                        { key: 'Julie', at: false, care: false, age: 2 },
-                    ]}
+                    keyExtractor={(item, index) => item.name}
+                    data={animalsList}
                     renderItem={({ item }) => <PawListCard
-                        name={item.key}
-                        age={item.age}
+                        name={item.name}
+                        age={item.age.num[0]}
                         navigation={navigation}
                     />}
                 />
