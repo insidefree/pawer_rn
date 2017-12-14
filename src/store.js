@@ -1,4 +1,5 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
 import reducers from './reducers'
 import AppReducer from './reducers'
 
@@ -19,3 +20,5 @@ import AppReducer from './reducers'
 }) */
 
 export default createStore(AppReducer)
+
+// export default compose(applyMiddleware(thunk))(createStore)(AppReducer)

@@ -52,7 +52,11 @@ function auth(state = initialAuthState, action) {
   }
 }
 
+/* animals */
+import animals from './animals'
+
 export default combineReducers({
   nav,
   auth,
+  animals
 });

@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { View, Text, Image, FlatList, StyleSheet } from 'react-native'
 
 /* components */
 import Header from '../../components/Header'
 import PawListCard from '../../components/Cards/PawListCard'
 
-export default class PawListScreen extends Component {
+
+/* actions */
+import { fetchAnimals, SelectAnimal } from '../../actions/animals'
+
+
+export class PawListScreen extends Component {
     static navigationOptions = {
         title: '',
         tabBarIcon: ({ tintColor }) => (
@@ -15,8 +22,11 @@ export default class PawListScreen extends Component {
             />
         ),
     }
+    componentDidMount() {
+        console.log('myanimals', this.props.fetchAnimals())
+    }
     render() {
-        console.log("******list", this.props.navigation)
+        console.log("PawListScreen*props", this.props)
         const { navigation } = this.props
         return (
             <View style={styles.container}>
@@ -56,4 +66,14 @@ const styles = StyleSheet.create({
         width: 32,
         height: 32,
     },
-});
+})
+
+mapStateToProps = state => ({
+    animals: state.animals
+})
+
+mapDispatchToProps = dispatch => ({
+    fetchAnimals: bindActionCreators(fetchAnimals, dispatch)
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(PawListScreen)
