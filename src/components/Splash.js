@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 class Splash extends Component {
     render() {
-        console.log(this.props.users)
+        // console.log(this.props.users)
         return (
             <View style={styles.container}>
                 <Button

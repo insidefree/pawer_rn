@@ -2,7 +2,7 @@ import { SELECT_ANIMAL, START_LOADING, END_LOADING, FETCH_ANIMALS_LIST } from '.
 
 
 const INITIAL_STATE = {
-    selectAnimal: null,
+    selectedAnimal: null,
     animalsList: [],
     loading: false
 }
@@ -13,7 +13,7 @@ export default (state = INITIAL_STATE, action) => {
         case SELECT_ANIMAL:
             return {
                 ...state,
-                selectAnimal: action.payload
+                selectedAnimal: state.animalsList.filter(animal => animal.name === action.payload)[0]
             }
         case FETCH_ANIMALS_LIST:
             return {

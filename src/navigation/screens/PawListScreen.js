@@ -9,7 +9,7 @@ import PawListCard from '../../components/Cards/PawListCard'
 
 
 /* actions */
-import { fetchAnimals, SelectAnimal } from '../../actions/animals'
+import { fetchAnimals, selectAnimal } from '../../actions/animals'
 
 
 export class PawListScreen extends Component {
@@ -26,7 +26,7 @@ export class PawListScreen extends Component {
         this.props.fetchAnimals()
     }
     render() {
-        console.log("PawListScreen*props", this.props)
+        // console.log("PawListScreen*props", this.props)
         const { navigation, animals: { animalsList } } = this.props
         return (
             <View style={styles.container}>
@@ -39,6 +39,7 @@ export class PawListScreen extends Component {
                         age={item.age.num[0]}
                         images={item.images}
                         navigation={navigation}
+                        onSelect={this.props.selectAnimal}
                     />}
                 />
             </View>
@@ -66,7 +67,8 @@ mapStateToProps = state => ({
 })
 
 mapDispatchToProps = dispatch => ({
-    fetchAnimals: bindActionCreators(fetchAnimals, dispatch)
+    fetchAnimals: bindActionCreators(fetchAnimals, dispatch),
+    selectAnimal: bindActionCreators(selectAnimal, dispatch)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PawListScreen)

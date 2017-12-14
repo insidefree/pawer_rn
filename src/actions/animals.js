@@ -9,7 +9,8 @@ import { animalsRef } from '../config/firebase'
 
 export const selectAnimal = animalID => ({
     type: SELECT_ANIMAL,
-    payload: animals.filter(animal => animal.id === animalID)[0]
+    // payload: animals.filter(animal => animal.id === animalID)[0]
+    payload: animalID
 })
 
 

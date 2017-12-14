@@ -7,25 +7,26 @@ import PawDeed from '../../components/PawDeed'
 
 export default class PawListCard extends Component {
     render() {
-        console.log('PawListCardt', this.props)
-        const { name, age } = this.props
+        // console.log('PawListCardt', this.props)
+        const { name, age, animal } = this.props
         return (
             <ScrollView style={styles.container}>
                 <Image
                     style={styles.img}
-                    source={require('../../assets/img/dog.jpeg')}
+                    // source={require('../../assets/img/dog.jpeg')}
+                    source={{uri: animal.images[0]}}
                 />
                 <TouchableOpacity
                     onPress={() => this.props.navigation.goBack()}
                     style={styles.btnBack}
                 >
-                    <View>
+                    {/* <View> */}
                         <Image
                             source={require('../../assets/img/icons/right/right_3x.png')}
                             style={styles.imgArrow}
                         />
-                        <Text style={styles.name}>Hirosima</Text>
-                    </View>
+                        <Text style={styles.name}>{animal.name}</Text>
+                    {/* </View> */}
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -97,7 +98,7 @@ const styles = StyleSheet.create({
         fontFamily: 'CirceBold',
         color: '#fff',
         backgroundColor: 'transparent',
-        top: -4,
+        top: 2,
         left: 35
     },
     btnFavorite: {
