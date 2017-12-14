@@ -5,7 +5,7 @@ import { View, Text, Image, TouchableWithoutFeedback, StyleSheet } from 'react-n
 export default class PawListCard extends Component {
     render() {
         console.log("******card", this.props)
-        const { name, age, navigation } = this.props
+        const { name, age, images, navigation } = this.props
         return (
             <TouchableWithoutFeedback
                 onPress={() => navigation.navigate('PawListCardEntryScreen')}
@@ -13,7 +13,8 @@ export default class PawListCard extends Component {
                 <View style={styles.container}>
                     <Image
                         style={styles.img}
-                        source={require('../../assets/img/dog.jpeg')}
+                        // source={require('../../assets/img/dog.jpeg')}
+                        source={{ uri: images[0] }}
                     />
                     <Text style={styles.name}>
                         {name}

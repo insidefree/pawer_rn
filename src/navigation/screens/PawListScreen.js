@@ -37,6 +37,7 @@ export class PawListScreen extends Component {
                     renderItem={({ item }) => <PawListCard
                         name={item.name}
                         age={item.age.num[0]}
+                        images={item.images}
                         navigation={navigation}
                     />}
                 />
