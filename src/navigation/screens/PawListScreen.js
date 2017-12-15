@@ -26,7 +26,7 @@ export class PawListScreen extends Component {
         this.props.fetchAnimals()
     }
     render() {
-        // console.log("PawListScreen*props", this.props)
+        console.log("PawListScreen*props", this.props)
         const { navigation, animals: { animalsList } } = this.props
         return (
             <View style={styles.container}>
@@ -35,6 +35,7 @@ export class PawListScreen extends Component {
                     keyExtractor={(item, index) => item.name}
                     data={animalsList}
                     renderItem={({ item }) => <PawListCard
+                        id={item.id}
                         name={item.name}
                         age={item.age.num[0]}
                         images={item.images}
