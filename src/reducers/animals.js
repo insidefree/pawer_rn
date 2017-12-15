@@ -1,10 +1,19 @@
-import { SELECT_ANIMAL, START_LOADING, END_LOADING, FETCH_ANIMALS_LIST } from '../constants'
+import {
+    SELECT_ANIMAL,
+    START_LOADING,
+    END_LOADING,
+    FETCH_ANIMALS_LIST,
+    FETCH_ANIMALS_LIST_FIRST_LOAD,
+    FETCH_ANIMALS_LIST_BY_BATCH
+} from '../constants'
 
 
 const INITIAL_STATE = {
     selectedAnimal: null,
     animalsList: [],
-    loading: false
+    // fetchAnimalsFirstLoad: [],
+    loading: false,
+    lastKnownAnimal: null
 }
 
 
@@ -19,6 +28,18 @@ export default (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 animalsList: action.payload,
+            }
+        case FETCH_ANIMALS_LIST_FIRST_LOAD:
+            return {
+                ...state,
+                animalsList: action.payload.animalsList,
+                lastKnownAnimal: action.payload.lastKnownAnimal
+            }
+        case FETCH_ANIMALS_LIST_BY_BATCH:
+            return {
+                ...state,
+                animalsList: state.animalsList.concat(action.payload.animalsList),
+                lastKnownAnimal: action.payload.lastKnownAnimal
             }
         case START_LOADING:
             return {

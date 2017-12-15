@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { View, Text, Image, FlatList, StyleSheet } from 'react-native'
+import { View, Text, Image, Button, FlatList, StyleSheet } from 'react-native'
 
 /* components */
 import Header from '../../components/Header'
@@ -9,7 +9,7 @@ import PawListCard from '../../components/Cards/PawListCard'
 
 
 /* actions */
-import { fetchAnimals, selectAnimal } from '../../actions/animals'
+import { fetchAnimals, selectAnimal, fetchAnimalsFirstLoad, fetchAnimalsByBatch } from '../../actions/animals'
 
 
 export class PawListScreen extends Component {
@@ -23,16 +23,20 @@ export class PawListScreen extends Component {
         ),
     }
     componentDidMount() {
-        this.props.fetchAnimals()
+        // this.props.fetchAnimals()
+        this.props.fetchAnimalsFirstLoad()
     }
     render() {
-        console.log("PawListScreen*props", this.props)
-        const { navigation, animals: { animalsList } } = this.props
+        // console.log("PawListScreen*props", this.props)
+        const { navigation, animals: { animalsList, lastKnownAnimal } } = this.props
+        // console.log('animalsListByBatch', fetchAnimalsByBatchFirstLoad)
+        console.log('lastKnownAnimal', lastKnownAnimal)
         return (
             <View style={styles.container}>
                 <Header title={'Pawslist'} />
+                <Button title='add' onPress={() => { this.props.fetchAnimalsByBatch(lastKnownAnimal.id) }} />
                 <FlatList
-                    keyExtractor={(item, index) => item.name}
+                    keyExtractor={(item, index) => item.id}
                     data={animalsList}
                     renderItem={({ item }) => <PawListCard
                         id={item.id}
@@ -64,12 +68,14 @@ const styles = StyleSheet.create({
 })
 
 mapStateToProps = state => ({
-    animals: state.animals
+    animals: state.animals,
 })
 
 mapDispatchToProps = dispatch => ({
     fetchAnimals: bindActionCreators(fetchAnimals, dispatch),
-    selectAnimal: bindActionCreators(selectAnimal, dispatch)
+    selectAnimal: bindActionCreators(selectAnimal, dispatch),
+    fetchAnimalsFirstLoad: bindActionCreators(fetchAnimalsFirstLoad, dispatch),
+    fetchAnimalsByBatch: bindActionCreators(fetchAnimalsByBatch, dispatch)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PawListScreen)
