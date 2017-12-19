@@ -11,7 +11,7 @@ import {
 const INITIAL_STATE = {
     selectedAnimal: null,
     animalsList: [],
-    // fetchAnimalsFirstLoad: [],
+    refreshLoadingAnimals: [],
     loading: false,
     lastKnownAnimal: null
 }

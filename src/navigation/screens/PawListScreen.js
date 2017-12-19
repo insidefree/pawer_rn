@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { View, Text, Image, Button, FlatList, StyleSheet } from 'react-native'
+import { View, Text, Image, FlatList, StyleSheet } from 'react-native'
 
 /* components */
 import Header from '../../components/Header'
@@ -22,19 +22,29 @@ export class PawListScreen extends Component {
             />
         ),
     }
+
     componentDidMount() {
-        // this.props.fetchAnimals()
         this.props.fetchAnimalsFirstLoad()
     }
+
+    // handleRefresh = () => {
+    //     console.log()
+    //     this.props.fetchAnimalsByBatch(this.props.lastKnownAnimal.id)
+    // }
+
+    _onEndReached = () => {
+        const { animals: { lastKnownAnimal }, fetchAnimalsByBatch } = this.props
+        // console.log('_onEndReached',this.props)
+        fetchAnimalsByBatch(lastKnownAnimal.id)
+    }
+
     render() {
-        // console.log("PawListScreen*props", this.props)
-        const { navigation, animals: { animalsList, lastKnownAnimal } } = this.props
-        // console.log('animalsListByBatch', fetchAnimalsByBatchFirstLoad)
-        console.log('lastKnownAnimal', lastKnownAnimal)
+        const { navigation, animals: { animalsList, lastKnownAnimal, loading } } = this.props
+        const { fetchAnimalsByBatch } = this.props
+        // console.log('lastKnownAnimal', lastKnownAnimal)
         return (
             <View style={styles.container}>
                 <Header title={'Pawslist'} />
-                <Button title='add' onPress={() => { this.props.fetchAnimalsByBatch(lastKnownAnimal.id) }} />
                 <FlatList
                     keyExtractor={(item, index) => item.id}
                     data={animalsList}
@@ -46,6 +56,8 @@ export class PawListScreen extends Component {
                         navigation={navigation}
                         onSelect={this.props.selectAnimal}
                     />}
+                    onEndReached={this._onEndReached}
+                    onEndReachedThreshold={0}
                 />
             </View>
         )
