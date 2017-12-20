@@ -13,7 +13,6 @@ const INITIAL_STATE = {
     animalsList: [],
     refreshLoadingAnimals: [],
     loading: false,
-    lastKnownAnimal: null
 }
 
 
@@ -33,13 +32,11 @@ export default (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 animalsList: action.payload.animalsList,
-                lastKnownAnimal: action.payload.lastKnownAnimal
             }
         case FETCH_ANIMALS_LIST_BY_BATCH:
             return {
                 ...state,
                 animalsList: state.animalsList.concat(action.payload.animalsList),
-                lastKnownAnimal: action.payload.lastKnownAnimal
             }
         case START_LOADING:
             return {

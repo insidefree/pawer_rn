@@ -28,23 +28,17 @@ export class PawListScreen extends Component {
         this.props.fetchAnimalsFirstLoad()
     }
 
-    // handleRefresh = () => {
-    //     console.log()
-    //     this.props.fetchAnimalsByBatch(this.props.lastKnownAnimal.id)
-    // }
+    handleRefresh = () => {
+        this.props.fetchAnimalsFirstLoad()
+    }
 
-    _onEndReached = () => {
-        // const { animals, animals: { lastKnownAnimal }, fetchAnimalsByBatch } = this.props
-        // console.log('_onEndReached',this.props)
+    handleOnEndReached = () => {
         const { animals: { animalsList }, fetchAnimalsByBatch } = this.props
-        // console.log('last',animalsList.slice(-1)[0].id)
         fetchAnimalsByBatch(animalsList.slice(-1)[0].id)
     }
 
     render() {
-        const { navigation, animals: { animalsList, lastKnownAnimal, loading } } = this.props
-        const { fetchAnimalsByBatch } = this.props
-        // console.log('lastKnownAnimal', lastKnownAnimal)
+        const { navigation, animals: { animalsList, loading } } = this.props
         return (
             <View style={styles.container}>
                 <Header title={'Pawslist'} />
@@ -59,8 +53,11 @@ export class PawListScreen extends Component {
                         navigation={navigation}
                         onSelect={this.props.selectAnimal}
                     />}
-                    onEndReached={this._onEndReached}
-                    onEndReachedThreshold={2}
+                    onEndReached={this.handleOnEndReached}
+                    onEndReachedThreshold={2}         
+                    showsVerticalScrollIndicator={false}
+                    onRefresh={this.handleRefresh}
+                    refreshing={loading}
                 />
             </View>
         )
