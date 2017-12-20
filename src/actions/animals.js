@@ -77,17 +77,17 @@ export const fetchAnimalsByBatch = (lastKnownAnimalId) => {
     return dispatch => {
         dispatch({ type: START_LOADING })
         var nextQuery = animalsRef.orderByChild('id').startAt(lastKnownAnimalId).limitToFirst(6)
-        console.log('nextQuery', nextQuery)
+        // console.log('nextQuery', nextQuery)
         nextQuery
             .on('value', function (snapshot) {
-                console.log('snapshot', snapshot)
+                // console.log('snapshot', snapshot)
                 let animalsList = []
 
                 snapshot.forEach(function (childSnapshot) {
-                    console.log('childSnapshot', childSnapshot)
+                    // console.log('childSnapshot', childSnapshot)
                     const { age, description, name, images, id } = childSnapshot.val()
                     animalsList.push({ age, description, name, images, id })
-                    console.log('animalsList', animalsList)
+                    // console.log('animalsList', animalsList)
 
                 });
                 animalsList.shift()

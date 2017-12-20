@@ -10,6 +10,7 @@ import PawListCard from '../../components/Cards/PawListCard'
 
 /* actions */
 import { fetchAnimals, selectAnimal, fetchAnimalsFirstLoad, fetchAnimalsByBatch } from '../../actions/animals'
+import animals from '../../reducers/animals';
 
 
 export class PawListScreen extends Component {
@@ -33,9 +34,11 @@ export class PawListScreen extends Component {
     // }
 
     _onEndReached = () => {
-        const { animals: { lastKnownAnimal }, fetchAnimalsByBatch } = this.props
+        // const { animals, animals: { lastKnownAnimal }, fetchAnimalsByBatch } = this.props
         // console.log('_onEndReached',this.props)
-        fetchAnimalsByBatch(lastKnownAnimal.id)
+        const { animals: { animalsList }, fetchAnimalsByBatch } = this.props
+        // console.log('last',animalsList.slice(-1)[0].id)
+        fetchAnimalsByBatch(animalsList.slice(-1)[0].id)
     }
 
     render() {
@@ -57,7 +60,7 @@ export class PawListScreen extends Component {
                         onSelect={this.props.selectAnimal}
                     />}
                     onEndReached={this._onEndReached}
-                    onEndReachedThreshold={0}
+                    onEndReachedThreshold={2}
                 />
             </View>
         )
