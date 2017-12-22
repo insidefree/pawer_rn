@@ -56,8 +56,8 @@ export class PawListScreen extends Component {
                     onEndReached={this.handleOnEndReached}
                     onEndReachedThreshold={2}         
                     showsVerticalScrollIndicator={false}
-                    onRefresh={this.handleRefresh}
-                    refreshing={loading}
+                    // onRefresh={this.handleRefresh}
+                    // refreshing={loading}
                 />
             </View>
         )
